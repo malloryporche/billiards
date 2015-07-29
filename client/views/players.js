@@ -1,6 +1,8 @@
 Template.players.helpers({
-	players: [
-		{name: "Mallory"},
-		{name: "Dennis"},
-	]
+	players: function() {
+		return Players.find();
+	},
+	no: function() {
+		return Players.find().count();
+	}
 })
