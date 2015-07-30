@@ -31,5 +31,10 @@ Template.teams.events({
 				});
 			};
 		});
+		Session.set('isCreatingTeam', false);
+	},
+	'click a.remove': function(e,t){
+		e.preventDefault();
+		Teams.remove(this._id);
 	}
 });
