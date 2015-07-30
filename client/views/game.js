@@ -5,11 +5,12 @@ Template.game.events({
 	},
 	'click a.delete-game': function(e,t){
 		e.preventDefault();
+
 		var gameID  = this._id,
 			teamIdA = this.teams[0]._id,
 			teamIdB = this.teams[1]._id;
 
-		Games.remove(gameID, funtion(error) {
+		Games.remove(gameID, function(error) {
 			if (!error) {
 				Teams.update({_id: teamIdA}, {$pull: {gameIds: ghameId}});
 			}
