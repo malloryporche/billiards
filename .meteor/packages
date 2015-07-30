@@ -7,3 +7,5 @@
 meteor-platform
 accounts-base
 accounts-google
+accounts-password
+accounts-ui
