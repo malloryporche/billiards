@@ -25,7 +25,7 @@ Template.games.events({
 
 	'submit form.form-create-game': function(e,t){
 		e.preventDefault();
-		debugger
+		// debugger
 
 		var team1 = {
 			  _id: t.$("select[name=teamOne]").val(),
@@ -41,6 +41,7 @@ Template.games.events({
  
     var game = {
       createdAt: new Date(),
+      ownerId: Meteor.userId(),
       teams: [team1, team2],
       completed: false
     }
