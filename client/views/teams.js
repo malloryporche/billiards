@@ -21,8 +21,12 @@ Template.teams.events({
 	'submit form.create-team': function(e,t){
 		e.preventDefault();
 
-		var teamName = t.$('input[name=name]').val();
-		Teams.insert({name: teamName}, function(error, _id){
+		var team = {
+			name: t.$('input[name=name]').val(),
+			ownerId: Meteor.userId()
+		};
+
+		Teams.insert(team, function(error, _id){
 			if(error){
 				alert(error);
 				Session.set('isCreatingTeam', true);
