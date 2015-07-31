@@ -3,16 +3,18 @@ Template.game.events({
 		e.preventDefault();
 		Games.update({_id: this._id}, {$set: {completed: true}});
 	},
-	'click a.delete-game': function(e,t){
+	'click a.delete-game': function(e,t) {
+		debugger
 		e.preventDefault();
-
-		var gameID  = this._id,
+		
+		var gameId  = this._id,
 			teamIdA = this.teams[0]._id,
 			teamIdB = this.teams[1]._id;
 
-		Games.remove(gameID, function(error) {
+		Games.remove(gameId, function (error) {
 			if (!error) {
-				Teams.update({_id: teamIdA}, {$pull: {gameIds: ghameId}});
+				Teams.update({_id: teamIdA}, {$pull: {gameIds: gameId}});
+				Teams.update({_id: teamIdB}, {$pull: {gameIds: gameId}});
 			}
 		});
 	},
