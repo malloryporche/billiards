@@ -40,7 +40,7 @@ Meteor.methods({
 		var gameId = Games.insert(game);
 
 
-		//llUpdate each team's cached array of game ids
+		//Update each team's cached array of game ids
 		Teams.update({_id: teamOneData._id}, {$addToSet: { gameIds: gameId}});
 		Teams.update({_id: teamTwoData._id}, {$addToSet: { gameIds: gameId}});
 

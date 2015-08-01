@@ -2,8 +2,8 @@
 	<h3>Players [ {{no}} ]</h3>
 	
 	{{#if isAddingPlayer}}
-		<form class="create-team">
-			<input type="text" name='name'>
+		<form class="create-player">
+			<input type="text" name='name' autofocus>
 				<button type='submit'>Submit</button>
 				<a href="#" class="cancel">Cancel</a>
 		</form>
@@ -13,9 +13,11 @@
 
 	<ul>
 		{{#each players}}
+			
 
 			<li>{{name}}</li>
-
+			 <a href="#" class="edit">edit</a> 
+      		<a href="#" class="remove"> (x)</a>
 		{{/each}}
 
 	</ul>

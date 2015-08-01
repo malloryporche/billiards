@@ -18,4 +18,28 @@ Template.players.events({
 		e.preventDefault();
 		Session.set('isAddingPlayer', false);
 	},
+	'click form.create-player': function(e,t) {
+		e.preventDefault();
+
+		var player = {
+			name: t.$('input[name=name]').val(),
+			ownerId: Meteor.userId()
+		};
+
+		Players.insert(player, function(error, _id){
+			if(error){
+				alert(error);
+				Session.set('isAddingPlayer', true);
+				Tracker.afterFlush(function(){
+					t.$('input[name=name]').val(player);
+				});
+			};
+		});
+		Session.set('isAddingPlayer', false);
+	},
+	'click a.remove': function(e,t){
+		e.preventDefault();
+		Teams.remove(this._id);
+	}
+
 })
