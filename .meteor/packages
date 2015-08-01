@@ -10,3 +10,4 @@ accounts-google
 accounts-password
 accounts-ui
 materialize:materialize
+iron:router
