@@ -11,3 +11,4 @@ accounts-password
 accounts-ui
 materialize:materialize
 iron:router
+fourseven:scss
