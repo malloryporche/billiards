@@ -20,11 +20,15 @@ Template.game.events({
 	},
 	'click a.score': function(e,t){
 		e.preventDefault();
+
 		var data = $(e.currentTarget).data();
 		var update = {$inc: {}};
 		var selector = "teams." + data.index + ".score";
 
 		update.$inc[selector] =  data.inc;
 		Games.update({_id: this._id}, update);
-	}
+	},
+	'click select#teamOne': function() {
+    $('select').material_select();
+  	}
 });

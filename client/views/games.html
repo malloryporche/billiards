@@ -2,19 +2,25 @@
 	<h3>Games</h3>
   {{#if isCreatingGame}}
     <form class="form-create-game">
-      <select name="teamOne">
+    <div class="input-field">
+       <select name="teamOne">
         {{#each teams}}
           <option value="{{_id}}">{{name}}</option>
         {{/each}}
       </select>
+    </div>
+     
  
       vs
- 
-      <select name="teamTwo">
-        {{#each teams}}
-          <option value="{{_id}}">{{name}}</option>
-        {{/each}}
-      </select>
+      
+      <div class="input-field">
+        <select name="teamTwo">
+          {{#each teams}}
+              <option value="{{_id}}">{{name}}</option>
+          {{/each}}
+        </select>
+      </div>
+      
  
       <button type="submit">Submit</button>
       <a class="cancel" href="#">Cancel</a>
