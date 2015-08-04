@@ -6,23 +6,34 @@
 					<form class="search">
         				<div class="input-field">
 	          				<input id="search" type="search" required>
-	          				<label for="search"><i class="mdi-action-search"></i></label>
 	          				<a href="#" class="mdi-navigation-close"></a>
+	          				<label for="search"><i class="mdi-action-search"></i></label>
         				</div>
-        				
       				</form>
       				{{else}}
-				
+      					{{#if isAddingPlayer}}
+						<form class="create-player">
+							<div class="input-field">
+								<input type="text" name='name' autofocus>
+								<a href="#" class="mdi-navigation-close  close-search"></a>
+							</div>
+						</form>
+						{{else}}
 					<!-- BRAND_LOGO -->
 					<a href="#" class="brand-logo">Billards</a>
 
 					<ul id="nav-mobile" class="right hide-on-med-and-down">
+				
+						<li><a href="#" class="mdi-social-person-add"></a></li>
+						
+						<li><a href="#" class="mdi-social-group-add"></a></li>
+						<li><a href="#" class="mdi-action-perm-contact-cal"></a></li>
 						<li><a href="#" class="mdi-action-search"></a></li>
 						<li><a href="#" class="mdi-action-perm-identity left" data-activates="user-login">{{> loginButtons}}</a></li>
 						<li><a href="#" class="mdi-action-settings"></a></li>
 					</ul>
 
-
+					{{/if}}
 				{{/if}}
 		</div>
 	</nav>

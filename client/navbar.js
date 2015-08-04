@@ -1,10 +1,38 @@
 Template.navbar.helpers({
+	isAddingPlayer: function() {
+		return Session.get('isAddingPlayer');
+	},
 	isSearching: function() {
 		return Session.get('isSearching');
 	}
 })
 
 Template.navbar.events({
+	'click a.mdi-social-person-add': function(e,t) {
+		return Session.set('isAddingPlayer', true);
+	},
+	'click a.close-search':function(e,t) {
+		debugger
+		e.preventDefault();
+		Session.set('isAddingPlayer', false);
+	},
+	'submit form.create-player': function(e,t) {
+		e.preventDefault();
+
+		var name =  t.$('input[name=name]').val(),
+			timestamp = new Date;
+		
+
+		//Invoke method to create player
+		Meteor.call('addNewPlayer', name, timestamp, function(error, result) {
+			if (error) {
+				SAlert.error('There was an error adding your player');
+			} else {
+				Session.set('isAddingPlayer', false);
+			}
+		})
+
+	},
 	'click a.mdi-action-search' : function(e,t) {
 		e.preventDefault();
 

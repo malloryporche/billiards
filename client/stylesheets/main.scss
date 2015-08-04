@@ -14,3 +14,9 @@ select {
 .input-field input[type=search] ~ .mdi-navigation-close {
 	color: white;
 }
+
+a.close-search {
+	position: absolute;
+	top: 0;
+	right: 10px;
+}
