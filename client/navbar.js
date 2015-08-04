@@ -1,9 +1,15 @@
 Template.navbar.helpers({
+	no: function() {
+		return Players.find().count();
+	},
 	isAddingPlayer: function() {
 		return Session.get('isAddingPlayer');
 	},
 	isSearching: function() {
 		return Session.get('isSearching');
+	},
+	newPlayer: function() {
+		return Session.get('addedNewPlayer');
 	}
 })
 
@@ -20,14 +26,15 @@ Template.navbar.events({
 		e.preventDefault();
 
 		var name =  t.$('input[name=name]').val(),
-			timestamp = new Date;
-		
+			timestamp = new Date,
+			formElement = t.find('form.create-player');
 
 		//Invoke method to create player
 		Meteor.call('addNewPlayer', name, timestamp, function(error, result) {
 			if (error) {
 				SAlert.error('There was an error adding your player');
 			} else {
+				formElement.reset();
 				Session.set('isAddingPlayer', false);
 			}
 		})

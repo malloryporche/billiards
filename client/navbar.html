@@ -10,6 +10,7 @@
 	          				<label for="search"><i class="mdi-action-search"></i></label>
         				</div>
       				</form>
+
       				{{else}}
       					{{#if isAddingPlayer}}
 						<form class="create-player">
@@ -29,8 +30,12 @@
 						<li><a href="#" class="mdi-social-group-add"></a></li>
 						<li><a href="#" class="mdi-action-perm-contact-cal"></a></li>
 						<li><a href="#" class="mdi-action-search"></a></li>
-						<li><a href="#" class="mdi-action-perm-identity left" data-activates="user-login">{{> loginButtons}}</a></li>
 						<li><a href="#" class="mdi-action-settings"></a></li>
+						<li><a href="#" class="mdi-action-perm-identity left" data-activates="user-login">{{> loginButtons}}</a></li>
+
+					</ul>
+					<ul id="accounts-dropdown">
+						<li><a href="#" class="mdi-social-person-add">Add Player</a><span class="{{#if newPlayer}} new {{else}} badge {{/if}}">[ {{no}} ]</span></li>
 					</ul>
 
 					{{/if}}

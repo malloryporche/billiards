@@ -5,7 +5,7 @@ Template.team.helpers({
 });
 
 Template.team.events({
-	'click a.edit': function(e,t){
+	'click a.mdi-image-edit': function(e,t){
 		e.preventDefault();
 		Session.set('editedTeamId', this._id);
 	},
@@ -42,7 +42,7 @@ Template.team.events({
 		e.preventDefault();
 		Session.set('editedTeamId', null);
 	},
-	'click a.remove': function(e,t){
+	'click a.mdi-action-delete': function(e,t){
 		e.preventDefault();
 		Teams.remove(this._id);
 	}

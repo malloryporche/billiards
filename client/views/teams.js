@@ -20,7 +20,8 @@ Template.teams.events({
 	},
 	'submit form.create-team': function(e,t){
 		e.preventDefault();
-
+		debugger 
+		
 		var team = {
 			name: t.$('input[name=name]').val(),
 			ownerId: Meteor.userId()

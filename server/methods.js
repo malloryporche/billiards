@@ -18,6 +18,8 @@ addNewPlayer: function (value0, value1) {
     Session.set('isAddingPlayer', false);
 
    return addNewPlayer;
+
+   
  }
 });
 // deleteBoards: function (value0) {
