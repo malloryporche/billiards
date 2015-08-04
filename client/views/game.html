@@ -1,9 +1,21 @@
 <template name="game">
 	<li>
 		{{#if completed}}
-			{{teams.[0].name}}
-			vs
-			{{teams.[1].name}}
+
+			{{#if isEditingGame}}
+
+				{{> formEdit}}
+
+				{{else}}
+				
+				{{teams.[0].name}}
+					vs
+				{{teams.[1].name}}
+
+			{{/if}}
+			
+			<a href="#" class="mdi-image-edit edit-game"></a>
+			<a href="#" class="mdi-action-delete"></a>
 
 		{{else}}
 

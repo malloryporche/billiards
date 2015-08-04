@@ -35,8 +35,6 @@ Template.team.events({
 						}
 					}
 				});
-
-				Session.set('editedTeamId', null);
 			Session.set('editedTeamId', null);
 		}
 	},

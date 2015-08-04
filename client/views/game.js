@@ -1,3 +1,10 @@
+Template.game.helpers({
+	isEditingGame: function() {
+		return Session.get('isEditingGame');
+	}
+})
+
+
 Template.game.events({
 	'click a.finish-game': function(e,t){
 		e.preventDefault();
@@ -28,7 +35,9 @@ Template.game.events({
 		update.$inc[selector] =  data.inc;
 		Games.update({_id: this._id}, update);
 	},
-	'click select#teamOne': function() {
-    $('select').material_select();
-  	}
+	'click a.mdi-image-edit': function() {
+		debugger
+		e.preventDefault();
+		return Session.set('isEditingGame', true);
+	}
 });
