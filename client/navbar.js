@@ -16,5 +16,12 @@ Template.navbar.events({
 
 		//Set isSearching reactive variable to false
 		Session.set('isSearching', false);
+	},
+	'click a.mdi-action-perm-identity': function(e,t) {
+		e.preventDefault();
+		// debugger
+
+		// Activates the dropdown menu in nav
+		$('.dropdown-button').dropdown();
 	}
 })

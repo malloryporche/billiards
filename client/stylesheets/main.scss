@@ -1,5 +1,16 @@
+/*GLOBAL*/
+.container {
+	width: 100%;
+	margin: 0;
+	max-width: none;
+}
+
 /*FORM INPUT
 */
 select {
 	display: block;
+}
+
+.input-field input[type=search] ~ .mdi-navigation-close {
+	color: white;
 }
