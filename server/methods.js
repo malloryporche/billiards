@@ -8,7 +8,9 @@ addNewPlayer: function (value0, value1) {
         'gameIDs':[],
         'teamIDs':[],
         'teamWins':0,
-        'teamLosses':0
+        'teamLosses':0,
+        'personalWins': 0,
+        'personalLosses':0
     });
       Players.insert(player, function(error, _id){
       if(error){
@@ -45,7 +47,7 @@ addNewPlayer: function (value0, value1) {
    Teams.insert(team, function(error, _id) {
       if(error) {
         alert(error);
-        sAlert.error('error', 'Problem creating new team');
+        sAlert.error('Problem creating new team');
       }
       return createTeam;
    })

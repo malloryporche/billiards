@@ -11,7 +11,7 @@ Template.game.events({
 		Games.update({_id: this._id}, {$set: {completed: true}});
 	},
 	'click a.mdi-action-delete': function(e,t) {
-		debugger
+		// debugger
 		e.preventDefault();
 		
 		var gameId  = this._id,

@@ -1,5 +1,9 @@
 /*GLOBAL*/
+html, body {
+	height: 100%;
+}
 .container {
+	height: 100%;
 	width: 100%;
 	margin: 0;
 	max-width: none;
@@ -9,7 +13,7 @@
 	margin: 0 20px;
 	text-transform: uppercase;
 	letter-spacing: 0.1925em;
-	text-shadow: 0 0 blur #000;
+	text-shadow: gray 2px 3px;
 	font-weight: lighter;
 }
 
