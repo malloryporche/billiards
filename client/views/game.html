@@ -17,7 +17,8 @@
 			<a href="#" class="mdi-action-delete"></a>
 
 		{{else}}
-
+		
+		<li class="gameName">
 			{{teams.[0].name}}
 			(<a href="#" class="score" data-inc="-1" data-index="0">-</a>)
 			{{teams.[0].score}}
@@ -27,10 +28,15 @@
 			(<a href="#" class="score" data-inc="-1" data-index="1">-</a>)
 			{{teams.[1].score}}
 			(<a href="#" class="score" data-inc="1" data-index="1">+</a>)
-
+		</li>
+			
+		<span class="icons">
 			<a href="#" class="mdi-action-done mdi-game-completed"></a>
 			<a href="#" class="mdi-action-delete"></a>
+		</span>
+
 
 		{{/if}}
+
 	</li>
 </template>

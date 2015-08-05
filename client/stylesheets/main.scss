@@ -34,6 +34,7 @@ a.mdi-navigation-close.close-create-team {
 	position: absolute;
 	top: 0;
 	right: 10px;
+	font-size: 2rem;
 }
 
 /*CARD-PANELS*/
@@ -41,17 +42,25 @@ a.mdi-navigation-close.close-create-team {
 .card-panel {
 	margin: 20px;
 }
-li.playerName a.edit.mdi-image-edit, li.playerName a.remove.mdi-action-delete {
+li.playerName a.edit.mdi-image-edit, li.playerName a.remove.mdi-action-delete, li.teamName a, li.gameName a {
 	display: none;
 }
+li.gameName a.score {
+	display: inline-block;
+}
 
-li.playerName:hover {
-	a.edit-mdi-image-edit {
-		display: inline-block;
-	},
-	a.remove-mdi-action-delete {
+li.playerName:hover a.edit.mdi-image-edit {
 		display: inline-block;
 	}
+li.playerName:hover a.remove.mdi-action-delete {
+		display: inline-block;
+}
+
+li.teamName:hover a {
+	display: inline-block;
+}
+li.gameName:hover span {
+	display: inline-block;
 }
 /* Players */
 

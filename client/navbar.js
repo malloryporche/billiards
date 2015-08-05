@@ -40,6 +40,45 @@ Template.navbar.events({
 		})
 
 	},
+	'submit form.create-team': function(e,t) {
+		// debugger
+		e.preventDefault();
+
+		var teamName = t.$('input[name="teamName"]').val(),
+			self = this;
+
+		Meteor.call('createTeam', teamName, function (error, result) {
+			if(!error) {
+				sAlert.success('{{teamName}} has been added to your Teams database');
+			} else {
+				Session.set('isCreatingTeam', false);
+			}
+		});
+	},
+		// 			debugger
+		// if(teamName.length) {
+		// 	Teams.update(this._id, {$set: {name: teamName}},
+		// 		function(error){
+
+		// 			if(!error){
+
+		// 				//Update games this team is a part of
+		// 				var games = Games.find({_id: {$in: self.gameIds}});
+
+		// 				if(games.count()){
+		// 					_(games.fetch()).each(function(game){
+		// 						var team = _(game.teams).findWhere({_id: self._id});
+		// 						if(team != null){
+		// 							team.name = teamName;
+		// 							Games.update({_id: game._id}, {$set: {teams: game.teams}})
+		// 						}
+		// 					});
+		// 				}
+		// 			}
+		// 		});
+		// 	Session.set('editedTeamId', null);
+		// }
+
 
 	//Toggle between normal navbar and search-form, addplayers
 	'click a.mdi-navigation-close.close-search': function(e,t) {
