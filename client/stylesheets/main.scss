@@ -4,6 +4,13 @@
 	margin: 0;
 	max-width: none;
 }
+/*Logo styling*/
+.brand-logo {
+	margin: 0 20px;
+	text-transform: uppercase;
+	letter-spacing: 0.1725em;
+	text-shadow: hoff voff blur #000;
+}
 
 /*FORM INPUT
 */
@@ -15,7 +22,8 @@ select {
 	color: white;
 }
 
-a.mdi-navigation-close.close-add-player {
+a.mdi-navigation-close.close-add-player,
+a.mdi-navigation-close.close-create-team {
 	position: absolute;
 	top: 0;
 	right: 10px;
@@ -26,3 +34,6 @@ a.mdi-navigation-close.close-add-player {
 .card-panel {
 	margin: 20px;
 }
+
+/* Players */
+

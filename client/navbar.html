@@ -1,6 +1,6 @@
 <template name="navbar">
 <nav>
-		<div class="nav-wrapper">
+		<div class="nav-wrapper indigo z-depth-5">
 		<!-- SEARCH BAR -->
 		{{#if isSearching}}
 					<form class="search">
@@ -15,8 +15,9 @@
       					{{#if isAddingPlayer}}
 						<form class="create-player">
 							<div class="input-field">
-								<input type="text" name='name' >
+								<input type="text" name='name' id="createPlayer">
 								<a href="#" class="mdi-navigation-close  close-add-player"></a>
+								<label for="create-player"><i class="mdi-social-person-add"></i></label>
 							</div>
 						</form>
 						{{else}}
@@ -24,7 +25,8 @@
 							<form class="create-team">
 								<div class="input-field">
 									<input type="text" name="name">
-									<a href="#" class="mdi-navigation-close"></a>
+									<a href="#" class="mdi-navigation-close close-create-team"></a>
+									<label for="search"><i class="mdi-action-search"></i></label>
 								</div>
 							</form>
 
@@ -36,7 +38,7 @@
 				
 						<li><a href="#" class="mdi-social-person-add dropdown-button" data-activates='accounts-dropdown'></a></li>
 						
-						<li><a href="#" class="mdi-social-group-add"></a></li>
+						<li><a href="#" class="mdi-social-group-add create-team"></a></li>
 						<li><a href="#" class="mdi-action-perm-contact-cal"></a></li>
 						<li><a href="#" class="mdi-action-search"></a></li>
 						<li><a href="#" class="mdi-action-settings"></a></li>

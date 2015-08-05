@@ -6,7 +6,7 @@ Template.game.helpers({
 
 
 Template.game.events({
-	'click a.mdi-action-done': function(e,t){
+	'click a.mdi-game-completed': function(e,t){
 		e.preventDefault();
 		Games.update({_id: this._id}, {$set: {completed: true}});
 	},
