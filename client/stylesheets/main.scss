@@ -8,8 +8,9 @@
 .brand-logo {
 	margin: 0 20px;
 	text-transform: uppercase;
-	letter-spacing: 0.1725em;
-	text-shadow: hoff voff blur #000;
+	letter-spacing: 0.1925em;
+	text-shadow: 0 0 blur #000;
+	font-weight: lighter;
 }
 
 /*FORM INPUT
@@ -18,8 +19,14 @@ select {
 	display: block;
 }
 
-.input-field input[type=search] ~ .mdi-navigation-close {
+.input-field input[type=search] ~ .mdi-navigation-close, .mdi- {
 	color: white;
+	position: absolute;
+    top: 0;
+    right: 1rem;
+    cursor: pointer;
+    font-size: 2rem;
+    transition: .3s color;
 }
 
 a.mdi-navigation-close.close-add-player,
@@ -35,5 +42,12 @@ a.mdi-navigation-close.close-create-team {
 	margin: 20px;
 }
 
+a.edit.mdi-image-edit,
+a.remove.mdi-action-delete {
+	visibility: none;
+}
+li.playerName:hover {
+	display: block;
+}
 /* Players */
 
