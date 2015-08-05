@@ -4,7 +4,11 @@ addNewPlayer: function (value0, value1) {
         'name': value0, 
         'timestamp': value1, 
         'favorite': false,
-        'ownerId' : Meteor.userId()
+        'ownerId' : Meteor.userId(),
+        'gameIDs':[],
+        'teamIDs':[],
+        'teamWins':0,
+        'teamLosses':0
     });
       Players.insert(player, function(error, _id){
       if(error){
@@ -12,14 +16,39 @@ addNewPlayer: function (value0, value1) {
         Session.set('isAddingPlayer', true);
         Tracker.afterFlush(function(){
           t.$('input[name=name]').val(player);
+           Session.set('isAddingPlayer', false);
+
         });
       };
     });
-    Session.set('isAddingPlayer', false);
-
-   return addNewPlayer;
-
    
+   return addNewPlayer;
+ },
+
+ updatePlayerName: function(value0, value1) {
+  var updatePlayer = Players.update(
+                    {'_id': this._id}, 
+                    {$set: {name: playerName}});
+ },
+
+ createTeam: function(value0) {
+   var createTeam = Teams.insert({
+        'name': value0,
+        'timestamp': new Date,
+        'favorite': false,
+        'ownerId': Meteor.userId(),
+        'gameIds': [],
+        'teamWins': 0,
+        'teamLosses': 0
+
+   });
+   Teams.insert(team, function(error, _id) {
+      if(error) {
+        alert(error);
+        sAlert.error('error', 'Problem creating new team');
+      }
+      return createTeam;
+   })
  }
 });
 // deleteBoards: function (value0) {

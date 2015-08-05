@@ -15,17 +15,26 @@
       					{{#if isAddingPlayer}}
 						<form class="create-player">
 							<div class="input-field">
-								<input type="text" name='name' autofocus>
+								<input type="text" name='name' >
 								<a href="#" class="mdi-navigation-close  close-search"></a>
 							</div>
 						</form>
 						{{else}}
+							{{#if isCreatingTeam}}
+							<form class="create-team">
+								<div class="input-field">
+									<input type="text" name="name">
+									<a href="#" class="mdi-navigation-close"></a>
+								</div>
+							</form>
+
+							{{else}}
 					<!-- BRAND_LOGO -->
 					<a href="#" class="brand-logo">Billards</a>
 
 					<ul id="nav-mobile" class="right hide-on-med-and-down">
 				
-						<li><a href="#" class="mdi-social-person-add"></a></li>
+						<li><a href="#" class="mdi-social-person-add dropdown-button" data-activates='accounts-dropdown'></a></li>
 						
 						<li><a href="#" class="mdi-social-group-add"></a></li>
 						<li><a href="#" class="mdi-action-perm-contact-cal"></a></li>
@@ -34,10 +43,15 @@
 						<li><a href="#" class="mdi-action-perm-identity left" data-activates="user-login">{{> loginButtons}}</a></li>
 
 					</ul>
-					<ul id="accounts-dropdown">
-						<li><a href="#" class="mdi-social-person-add">Add Player</a><span class="{{#if newPlayer}} new {{else}} badge {{/if}}">[ {{no}} ]</span></li>
+					<ul id="accounts-dropdown" class="dropdown-content">
+						<li>
+							<a href="#" class="mdi-social-person-add">Add Player</a>
+						</li>
+						<li>
+							<span class="{{#if newPlayer}} new {{else}} badge {{/if}}">[ {{no}} ]</span>
+						</li>
 					</ul>
-
+						{{/if}}
 					{{/if}}
 				{{/if}}
 		</div>

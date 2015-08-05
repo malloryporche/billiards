@@ -10,6 +10,9 @@ Template.navbar.helpers({
 	},
 	newPlayer: function() {
 		return Session.get('addedNewPlayer');
+	},
+	isCreatingTeam: function() {
+		return Session.get('isCreatingTeam');
 	}
 })
 
@@ -17,7 +20,7 @@ Template.navbar.events({
 	'click a.mdi-social-person-add': function(e,t) {
 		return Session.set('isAddingPlayer', true);
 	},
-	'click a.close-search':function(e,t) {
+	'click a.mdi-navigation-close.close-search':function(e,t) {
 		debugger
 		e.preventDefault();
 		Session.set('isAddingPlayer', false);
@@ -46,9 +49,9 @@ Template.navbar.events({
 		//Set isSearching reactive variable to true
 		Session.set('isSearching', true);
 	},
-	'click a.mdi-navigation-close': function (e,t) {
+	'click a.close-search': function (e,t) {
 		e.preventDefault();
-
+		// debugger
 		//Set isSearching reactive variable to false
 		Session.set('isSearching', false);
 	},
@@ -58,5 +61,21 @@ Template.navbar.events({
 
 		// Activates the dropdown menu in nav
 		$('.dropdown-button').dropdown();
+	},
+	'click a.mdi-social-group-add': function(e,t) {
+		debugger
+		e.preventDefault();
+		
+		//Set isCreatingTeam to true
+		Session.set('isCreatingTeam', true);
+	},
+	'click a.mdi-navigation-close': function(e, t) {
+		e.preventDefault();
+
+		Session.set('isCreatingTeam', false);
+	},
+	'click a.mdi-social-group-add': function(e,t) {
+		e.preventDefault();
 	}
-})
+
+});

@@ -1,14 +1,27 @@
 <template name="players">
-	<h3>Players</h3>
+
+		<h3>
+	<a href="{{pathFor 'playerDetailPage'}}" class="mdi-social-group-add">Players</a>
+	</h3>
 
 	<ul>
 		{{#each players}}
+			 {{#if isEditingPlayer}}
+
+    			<form class="form-edit"> 
+			        <input name="name" type="text" value="{{name}}">
+			        <button type="submit">Submit</button>
+			    </form>
+
+			 {{/if}}
 
 			<li>{{name}}
 			 <a href="#" class="edit mdi-image-edit"></a> 
       		<a href="#" class="remove mdi-action-delete"></a>
       		</li>
 		{{/each}}
-
 	</ul>
+	
+
+	
 </template>
