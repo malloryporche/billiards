@@ -1,0 +1,31 @@
+<template name="playerProfileInfo">
+<div class="row">
+    <form class="col s12 updatePlayerProfileInfo">
+      <div class="row">
+        <div class="input-field col s6">
+          <input placeholder="Placeholder" id="name" type="text" class="validate" value="{{name}}">
+          <label for="name">Name</label>
+        </div>
+        <div class="input-field col s6">
+          <input id="last_name" type="text" class="validate">
+          <label for="last_name">Age</label>
+        </div>
+      </div>
+     
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="playerBirthdate" type="datepicker" class="datepicker">
+
+        </div>
+				<label for="playerBirthdate">Birthday</label>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="email" type="email" class="validate" value="{{email}}">
+          <label for="email">Email</label>
+        </div>
+      </div>
+      <button class="btn waves-effect effect-light grey lighten-1 z-depth-5">Save changes</button>
+    </form>
+  </div>
+</template>

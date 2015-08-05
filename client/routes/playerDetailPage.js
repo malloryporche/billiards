@@ -6,12 +6,15 @@ Template.playerDetailPage.helpers({
             return false;
         }
     },
+    isUpdatingProfileInfo: function() {
+    	return Session.get('isUpdatingProfileInfo');
+    }
 })
 
 Template.playerDetailPage.events({
 	'click input.favorites': function(e,t){
         // code goes here
-        debugger
+        // debugger
 
         var _id = this._id,
             currentFavoriteStatus = this.favorite,
@@ -27,4 +30,24 @@ Template.playerDetailPage.events({
             });
     	} 
     },
+    'click a.mdi-image-edit': function(e,t) {
+    	//debugger
+
+    	return Session.set('isUpdatingProfileInfo', true);
+    },
+    'click button': function(e,t) {
+
+    	return Session.set('isUpdatingProfileInfo', false);
+    },
+    'click input#playerBirthdate':function() {
+    	debugger
+    	$('.datepicker').pickadate({
+    		selectMonths: true,
+    		selectYears: true
+    	})
+    }
 })
+
+Template.playerDetailPage.onRendered(function() {
+	
+  });

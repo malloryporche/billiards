@@ -8,6 +8,18 @@ html, body {
 	margin: 0;
 	max-width: none;
 }
+h1,h2,h3,h4,h5,h6,p,a {
+	font-weight: lighter;
+}
+h5.playerProfileStats {
+	text-transform: uppercase;
+	letter-spacing: 0.3em;
+	color: white;
+}
+span.score-title {
+	color: white;
+	margin-bottom: 7px;
+}
 /*Logo styling*/
 .brand-logo {
 	margin: 0 20px;
@@ -39,7 +51,6 @@ input[type="checkbox"]:not(:checked), [type="checkbox"]:checked {
 input.favorites.mdi-action-favorite::before {
 	visibility: visible;
 	left: 0;
-	font-size: 2rem;
 }
 input.favorites.mdi-action-favorite-outline::before {
 	visibility: visible;
@@ -82,4 +93,42 @@ li.gameName:hover span {
 }
 /* Players */
 
+img.playerProfileAvatar {
+	width: 250px;
+float: right;
+}
+
+/*SCORES*/
+
+div.display-scores {
+	display: inline-block;
+	text-align: center;
+	text-transform: uppercase;
+	margin: 10px;
+	font-weight: lighter;
+	letter-spacing: 0.15em;
+}
+
+/*player Detail page*/
+div.profile-header {
+	text-transform: uppercase;
+	letter-spacing: 0.3em;
+	color: white;
+}
+span.score-titles {
+	font-weight: bold;
+
+}
+.row .col.6 {
+	width: inherit;
+}
+.row .col.s12 {
+	width: 70%;
+}
+
+input#playerBirthdate.datepicker {
+	background-color: transparent;
+	border: none;
+	color: white;
+}
 

@@ -11,7 +11,8 @@ addNewPlayer: function (value0, value1) {
         'teamLosses':0,
         'personalWins': 0,
         'personalLosses':0,
-        'profileImage': "/ben.jpg"
+        'birthdate': '01/01/2015',
+        'profileImage': '/images/ben.jpg'
     });
       Players.insert(player, function(error, _id){
       if(error){
