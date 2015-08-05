@@ -16,7 +16,7 @@
       <div class="input-field">
         <select name="teamTwo">
           {{#each teams}}
-              <option value="{{_id}}">{{name}}</option>
+            <option value="{{_id}}">{{name}}</option>
           {{/each}}
         </select>
       </div>
@@ -26,9 +26,9 @@
       <a class="cancel" href="#">Cancel</a>
     </form>
   {{else}}
-    <a class="create" href="#">Create</a>
-  {{/if}}
 
+  {{/if}}
+  <a href="" class="create">Create</a>
 	<ul>
 		{{#each games}}
 			{{> game}}

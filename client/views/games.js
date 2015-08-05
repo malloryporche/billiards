@@ -2,13 +2,11 @@ Template.games.helpers({
 	games: function() {
 		return Games.find();
 	},
-
-	teams: function() {
-		return Teams.find();
-	},
-
 	isCreatingGame: function() {
 		return Session.get('isCreatingGame');
+	},
+	teams: function() {
+		return Teams.find();
 	}
 })
 
@@ -17,34 +15,23 @@ Template.games.events({
 		e.preventDefault();
 		Session.set('isCreatingGame', true);
 	},
-
-	'click a.cancel':function(e,t){
-		e.preventDefault();
-		Session.set('isCreatingGame', false);
-	},
-
 	'submit form.form-create-game': function(e,t){
 		e.preventDefault();
-		// debugger
+		debugger
 
 		var team1 = {
 			  _id: t.$("select[name=teamOne]").val(),
-      name: t.$("select[name=teamOne] option:selected").text(),
-      score: 0
-    }
+		      name: t.$("select[name=teamOne] option:selected").text(),
+		      score: 0
+    		}
  
-    var team2 = {
-      _id: t.$("select[name=teamTwo]").val(),
-      name: t.$("select[name=teamTwo] option:selected").text(),
-      score: 0
-    }
- 
-    var game = {
-      createdAt: new Date(),
-      ownerId: Meteor.userId(),
-      teams: [team1, team2],
-      completed: false
-    }
+	    var team2 = {
+		      _id: t.$("select[name=teamTwo]").val(),
+		      name: t.$("select[name=teamTwo] option:selected").text(),
+		      score: 0
+    		}
+ 		Meteor.call('createGame', team1, team2);
+
  
     var gameId = Games.insert(game);
 
@@ -53,5 +40,11 @@ Template.games.events({
     Teams.update({_id: team2._id}, {$addToSet: { gameIds: gameId}});    
 
     Session.set('isCreatingGame', false);
+  },
+  'click a.cancel': function(e,t){
+  		e.preventDefault();
+  		Session.set('isCreatingGame', false);
   }
+
+	
 });
