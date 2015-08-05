@@ -32,7 +32,8 @@ addNewPlayer: function (value0, value1) {
  updatePlayerName: function(value0, value1) {
   var updatePlayer = Players.update(
                     {'_id': this._id}, 
-                    {$set: {name: playerName}});
+                    { $set: {name: value1}});
+  return updatePlayer;
  },
 
  createTeam: function(value0) {
@@ -68,7 +69,7 @@ addNewPlayer: function (value0, value1) {
         'teamTwoScore': 0
    
    });
-   Teams.insert(team, function(error, _id) {
+   Games.insert(game, function(error, _id) {
       if(error) {
         alert(error);
         sAlert.error('error', 'Problem creating new team');

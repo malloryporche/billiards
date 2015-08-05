@@ -2,10 +2,12 @@
 <div class="card-panel z-depth-5">
 	<div class="card-panel z-depth-4 indigo">
 	<img src="/images/ben.jpg" alt="" class="card-panel z-depth-4 playerProfileAvatar">
+
 		<h3 class='playerName'>{{name}}
 		<a href="#" class="mdi-image-edit"></a>
 		<input type="checkbox" class="favorites {{#if favorite}} mdi-action-favorite {{else }} mdi-action-favorite-outline {{/if }}">
 		</h3>
+
 		{{#if isUpdatingProfileInfo}}
 		<h5>
 			{{> playerProfileInfo}}
@@ -41,11 +43,11 @@
 		<!-- {{> Favorite}} -->
 
 		<div class="card-panel light-green z-depth-2 profile-header">
-			<h4>Recent Games</h4>
+			<h5>Recent Games</h5>
 		</div>
 
 		<div class="card-panel amber z-depth-2 profile-header">
-			<h4>Recent Teams</h4>
+			<h5>Recent Teams</h5>
 		</div>
 	</div>	
 

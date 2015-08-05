@@ -3,7 +3,7 @@ Template.players.helpers({
 		return Players.find();
 	},
 	isEditingPlayer: function() {
-		return Session.get('isEditingPlayer')  === this._id;
+		return Session.get('isEditingPlayer');
 	}
 	
 })
@@ -28,8 +28,7 @@ Template.players.events({
 			self = this;
 
 		Meteor.call('updatePlayerName', self._id, playerName);
-
-			playerName.reset();
+			
 			Session.set('editedTeamId', null);
 		}
 });

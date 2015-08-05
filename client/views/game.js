@@ -34,10 +34,5 @@ Template.game.events({
 
 		update.$inc[selector] =  data.inc;
 		Games.update({_id: this._id}, update);
-	},
-	'click a.mdi-image-edit': function() {
-		debugger
-		e.preventDefault();
-		return Session.set('isEditingGame', true);
 	}
 });

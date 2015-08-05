@@ -35,7 +35,7 @@ Template.navbar.events({
 		//Invoke method to create player
 		Meteor.call('addNewPlayer', name, timestamp, function(error, result) {
 			if (error) {
-				sAlert.success('{name} has been added to your database');
+				sAlert.success('{{name}} has been added to your database');
 			} else {
 				formElement.reset();
 				Session.set('isAddingPlayer', false);
