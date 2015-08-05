@@ -69,6 +69,18 @@ addNewPlayer: function (value0, value1) {
         'teamTwoScore': 0
    
    });
+
+   var team1 = Teams.findOne({'name': value0});
+   var team2 = Teams.findOne({'name': value1});
+
+    var game = {
+      completed: false,
+      createdAt: new Date,
+      teams: [
+        {name: team1.name, _id: team1._id, score: 0},
+        {name: team2.name, _id: team2._id, score: 0}
+      ]
+    };
    Games.insert(game, function(error, _id) {
       if(error) {
         alert(error);

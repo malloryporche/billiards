@@ -52,7 +52,7 @@ Template.navbar.events({
 
 		Meteor.call('createTeam', teamName, function (error, result) {
 			if(error) {
-				sAlert.success('teamName has been added to your Teams database');
+				sAlert.success(teamName + ' has been added to your Teams database');
 			} else {
 				Session.set('isCreatingTeam', false);
 			}
