@@ -32,5 +32,4 @@ Template.players.events({
 			playerName.reset();
 			Session.set('editedTeamId', null);
 		}
-
 });

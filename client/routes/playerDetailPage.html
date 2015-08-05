@@ -1,7 +1,18 @@
 <template name="playerDetailPage">
 <div class="card-panel z-depth-5">
-		<h3 class='card-panel z-depth-5 deep-orange-lighten-1'>{{name}}</h3>
+		<h3 class='card-panel z-depth-5 deep-orange lighten-1 playerName'>{{name}}
+		<input type="checkbox" class="favorites {{#if favorite}} mdi-action-favorite {{else }} mdi-action-favorite-outline {{/if }}">
+		</h3>
 		
+
+		<h4></h4>
+		<img src="{{profileImage}}" alt="" class="card-panel z-depth-4">
+		<div class="card-panel deep-orange lighten-1">
+			<h4 class="card-panel z-depth-3">Personal Wins</h4>
+			<h4 class="card-panel z-depth-3">Personal Losses</h4>
+			<h4 class="card-panel z-depth-3">Team Wins</h4>
+			<h4 class="card-panel z-depth-3">Team Losses</h4>
+		</div>
 		<!-- {{> Favorite}} -->
 
 		<div class="card-panel">

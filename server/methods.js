@@ -10,7 +10,8 @@ addNewPlayer: function (value0, value1) {
         'teamWins':0,
         'teamLosses':0,
         'personalWins': 0,
-        'personalLosses':0
+        'personalLosses':0,
+        'profileImage': "/ben.jpg"
     });
       Players.insert(player, function(error, _id){
       if(error){
@@ -73,6 +74,12 @@ addNewPlayer: function (value0, value1) {
       }
       return createGame;
    });
+ },
+ updateFavorites: function(value0, value1) {
+  var updateFavorites = Players.update({'_id' : value0},
+                                      {$set: {favorite : value1}});
+      return updateFavorites;
+      sAlert.success('Favorites successfully updated.');
  }
 
 });  

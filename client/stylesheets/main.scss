@@ -32,7 +32,15 @@ select {
     font-size: 2rem;
     transition: .3s color;
 }
-
+input[type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+	visibility: hidden;
+	left: initial;
+}
+input.favorites.mdi-action-favorite::before {
+	visibility: visible;
+	left: 0;
+	font-size: 2rem;
+}
 a.mdi-navigation-close.close-add-player,
 a.mdi-navigation-close.close-create-team {
 	position: absolute;
@@ -70,4 +78,5 @@ li.gameName:hover span {
 	display: inline-block;
 }
 /* Players */
+
 
