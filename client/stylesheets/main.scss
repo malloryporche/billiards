@@ -41,6 +41,9 @@ input.favorites.mdi-action-favorite::before {
 	left: 0;
 	font-size: 2rem;
 }
+input.favorites.mdi-action-favorite-outline::before {
+	visibility: visible;
+}
 a.mdi-navigation-close.close-add-player,
 a.mdi-navigation-close.close-create-team {
 	position: absolute;
