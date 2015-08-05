@@ -20,7 +20,12 @@ Template.navbar.events({
 	'click a.mdi-social-person-add': function(e,t) {
 		return Session.set('isAddingPlayer', true);
 	},
-	'click a.mdi-navigation-close.close-search':function(e,t) {
+	'click a.mdi-navigation-close': function(e,t) {
+		debugger
+		e.preventDefault();
+		Session.set('isSearching', false);
+	},
+	'click a.mdi-navigation-close.close-add-player':function(e,t) {
 		debugger
 		e.preventDefault();
 		Session.set('isAddingPlayer', false);
