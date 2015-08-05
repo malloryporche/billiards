@@ -41,13 +41,17 @@ a.mdi-navigation-close.close-create-team {
 .card-panel {
 	margin: 20px;
 }
-
-a.edit.mdi-image-edit,
-a.remove.mdi-action-delete {
-	visibility: none;
+li.playerName a.edit.mdi-image-edit, li.playerName a.remove.mdi-action-delete {
+	display: none;
 }
+
 li.playerName:hover {
-	display: block;
+	a.edit-mdi-image-edit {
+		display: inline-block;
+	},
+	a.remove-mdi-action-delete {
+		display: inline-block;
+	}
 }
 /* Players */
 
