@@ -20,16 +20,6 @@ Template.navbar.events({
 	'click a.mdi-social-person-add': function(e,t) {
 		return Session.set('isAddingPlayer', true);
 	},
-	'click a.mdi-navigation-close': function(e,t) {
-		debugger
-		e.preventDefault();
-		Session.set('isSearching', false);
-	},
-	'click a.mdi-navigation-close.close-add-player':function(e,t) {
-		debugger
-		e.preventDefault();
-		Session.set('isAddingPlayer', false);
-	},
 	'submit form.create-player': function(e,t) {
 		e.preventDefault();
 
@@ -48,6 +38,17 @@ Template.navbar.events({
 		})
 
 	},
+	'click a.mdi-navigation-close.close-search': function(e,t) {
+		debugger
+		e.preventDefault();
+		Session.set('isSearching', false);
+	},
+	'click a.mdi-navigation-close.close-add-player':function(e,t) {
+		debugger
+		e.preventDefault();
+		Session.set('isAddingPlayer', false);
+	},
+	
 	'click a.mdi-action-search' : function(e,t) {
 		e.preventDefault();
 
