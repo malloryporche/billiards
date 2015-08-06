@@ -35,7 +35,7 @@ Template.navbar.events({
 		//Invoke method to create player
 		Meteor.call('addNewPlayer', name, timestamp, function(error, result) {
 			if (error) {
-				sAlert.success('{{name}} has been added to your database');
+				sAlert.success(name + ' has been added to your player database');
 			} else {
 				formElement.reset();
 				Session.set('isAddingPlayer', false);
@@ -43,6 +43,7 @@ Template.navbar.events({
 		})
 
 	},
+	//Toggle between navbar and createTeam view
 	'submit form.create-team': function(e,t) {
 		// debugger
 		e.preventDefault();
@@ -70,6 +71,14 @@ Template.navbar.events({
 		// debugger
 		e.preventDefault();
 		Session.set('isAddingPlayer', false);
+
+		var options = {
+			keepHistory: 1000 * 60 * 5,
+			localSearch: true
+		};
+		var fields = ['packageName', 'description'];
+
+		PackageSearch = new SearchSource('packages', fields, options);
 	},
 	'click a.mdi-navigation-close': function(e, t) {
 		e.preventDefault();

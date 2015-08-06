@@ -8,36 +8,24 @@ Template.teams.helpers({
 });
 
 Template.teams.events({
-	'click a.create': function(e, t){
-		e.preventDefault();
-
-		Session.set('isCreatingTeam', true);
-	},
-	'click a.cancel': function(e, t){
-		e.preventDefault();
-
-		Session.set('isCreatingTeam', false);
-	},
 	'submit form.create-team': function(e,t){
 		e.preventDefault();
 		debugger 
-		
+
 		var team = {
 			name: t.$('input[name=name]').val(),
 			ownerId: Meteor.userId()
 		};
+		Meteor.call('createTeam', team.name, ownerId, function (error, result) {
+			if(error) {
+				sAlert.success(teamName + ' has been added to your Teams database');
+			} else {
+				Session.set('isCreatingTeam', false);
+			}
+	});
+},
 
-		Teams.insert(team, function(error, _id){
-			if(error){
-				alert(error);
-				Session.set('isCreatingTeam', true);
-				Tracker.afterFlush(function(){
-					t.$('input[name=name]').val(teamName);
-				});
-			};
-		});
-		Session.set('isCreatingTeam', false);
-	},
+	//Delete team
 	'click a.remove': function(e,t){
 		e.preventDefault();
 		Teams.remove(this._id);

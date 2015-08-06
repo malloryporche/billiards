@@ -36,7 +36,7 @@ addNewPlayer: function (value0, value1) {
   return updatePlayer;
  },
 
- createTeam: function(value0) {
+ createTeam: function(value0, value1) {
    var createTeam = Teams.insert({
         'name': value0,
         'timestamp': new Date,

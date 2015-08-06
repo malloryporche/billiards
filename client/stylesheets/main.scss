@@ -74,6 +74,12 @@ div.input-field {
 li.playerName a.edit.mdi-image-edit, li.playerName a.remove.mdi-action-delete, li.teamName a.icons, li.gameName a {
 	display: none;
 }
+li.playerName, li.teamName {
+	display: inline-block;
+	width: 200px;
+	height: 200px;
+	border: 2px solid black;
+}
 
 li.gameName a.score {
 	display: inline-block;
