@@ -11,6 +11,12 @@ html, body {
 h1,h2,h3,h4,h5,h6,p,a {
 	font-weight: lighter;
 }
+h3.header {
+	color: white;
+	text-transform: uppercase;
+	letter-spacing: 0.3em;
+	font-weight: lighter;
+}
 h5.playerProfileStats {
 	text-transform: uppercase;
 	letter-spacing: 0.3em;
@@ -70,15 +76,29 @@ div.input-field {
 
 .card-panel {
 	margin: 20px;
+	position: relative;
 }
 li.playerName a.edit.mdi-image-edit, li.playerName a.remove.mdi-action-delete, li.teamName a.icons, li.gameName a {
 	display: none;
+}
+li a.icons span {
+	position: absolute;
+	bottom: 0;
+	right: 0;
 }
 li.playerName, li.teamName {
 	display: inline-block;
 	width: 200px;
 	height: 200px;
 	border: 2px solid black;
+	position: relative;
+	li {
+		span {
+			position: absolute;
+			bottom: 0;
+			right: 0;
+		}
+	}
 }
 
 li.gameName a.score {
@@ -103,6 +123,7 @@ li.gameName:hover span {
 img.playerProfileAvatar {
 	width: 250px;
 float: right;
+z-index: 999;
 }
 
 /*SCORES*/

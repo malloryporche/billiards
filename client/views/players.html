@@ -1,29 +1,25 @@
 <template name="players">
 
-		<h3>
-	<i class="mdi-social-person-add"> Players</i>
-	</h3>
+		<h3 class="header"><i class="mdi-social-person-add"> Players</i></h3>
 
 	<ul>
 		{{#each players}}
-			 {{#if isEditingPlayer}}
 
-    			<form class="form-edit"> 
-			        <input name="name" type="text" value="{{name}}">
-			        <a href="#" class="mdi-navigation-close"><i class="mdi-navigation-close"></i></a>
-			    </form>
+			    {{#if isEditingPlayer}}
 
-			 {{/if}}
+			    	{{> formEdit}}
 
+			    {{else}}
+				
+				{{/if}}
 			
-				<li class="playerName card-panel z-depth-4 hoverable"><a href="{{pathFor 'playerDetailPage'}}">{{name}}</a>
-			
-			
-			<span>
-				<a href="#" class="edit mdi-image-edit"></a> 
-	      		<a href="#" class="remove mdi-action-delete"></a>
-			</span>
-				 
+				<li class="playerName card-panel z-depth-4 hoverable"><a href="{{pathFor 'playerProfile'}}">{{name}}</a>
+					<li>
+						<span>
+						<a href="#" class="edit mdi-image-edit"></a> 
+			      		<a href="#" class="remove mdi-action-delete"></a>
+					</span>
+					</li>
       		</li>
 
 		{{/each}}

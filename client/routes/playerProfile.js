@@ -1,4 +1,4 @@
-Template.playerDetailPage.helpers({
+Template.playerProfile.helpers({
 	favorite: function(){
         if ( this.favorite ) {
             return true;
@@ -11,7 +11,7 @@ Template.playerDetailPage.helpers({
     }
 })
 
-Template.playerDetailPage.events({
+Template.playerProfile.events({
 	'click input.favorites': function(e,t){
         // code goes here
         // debugger
@@ -48,6 +48,6 @@ Template.playerDetailPage.events({
     }
 })
 
-Template.playerDetailPage.onRendered(function() {
+Template.playerProfile.onRendered(function() {
 	
   });

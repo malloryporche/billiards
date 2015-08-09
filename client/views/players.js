@@ -3,7 +3,7 @@ Template.players.helpers({
 		return Players.find();
 	},
 	isEditingPlayer: function() {
-		return Session.get('isEditingPlayer');
+		return Session.get('editedPlayerId') === this._id;
 	}
 	
 })
@@ -15,10 +15,11 @@ Template.players.events({
 		Players.remove(this._id);
 	},
 	'click a.mdi-image-edit': function(e,t){
-		debugger
 		e.preventDefault();
+
 		Session.set('editedPlayerId', this._id);
 		Session.set('isEditingPlayer', true);
+		debugger
 	},
 	'submit form.form-edit': function(e,t) {
 		e.preventDefault();

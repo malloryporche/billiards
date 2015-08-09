@@ -1,4 +1,4 @@
-<template name="teamDetailPage">
+<template name="playerProfile">
 <div class="card-panel z-depth-5">
 	<div class="card-panel z-depth-4 indigo">
 	<img src="/images/ben.jpg" alt="" class="card-panel z-depth-4 playerProfileAvatar">
@@ -8,20 +8,29 @@
 		<input type="checkbox" class="favorites {{#if favorite}} mdi-action-favorite {{else }} mdi-action-favorite-outline {{/if }}">
 		</h3>
 
-		{{#if isUpdatingTeamProfile}}
+		{{#if isUpdatingProfileInfo}}
 		<h5>
-			{{> teamProfileInfo}}
+			{{> playerProfileInfo}}
 		</h5>
 		{{else}}
 			<h5>{{name}}</h5>
-			
+			<h5>{{birthdate}}</h5>
+			<h5>{{playerEmail}}</h5>
 		{{/if }}
 		</div>
 
-		<div class="card-panel light-green z-depth-2">
-		<h5 class="playerProfileStats">Team Stats</h5>
+		<div class="card-panel indigo darken-3 z-depth-2">
+		<h5 class="playerProfileStats">Player Stats</h5>
+			<h6 class="card-panel z-depth-3  indigo darken-1"> 
+			<div class="display-scores">
+				<span class="score-title">Wins</span> <br> {{personalWins}}
+			</div>
+
+			<div class="display-scores">
+				<span class="score-title">Losses</span><br>{{personalLosses}}
+			</div></h6>
 			
-			<h6 class="card-panel z-depth-3 light-green darken-2"> 
+			<h6 class="card-panel z-depth-3 indigo darken-1"> 
 			<div class="display-scores">
 				<span class="score-title">Team Wins</span> <br> {{teamWins}}
 			</div>
@@ -33,16 +42,13 @@
 		</div>
 		<!-- {{> Favorite}} -->
 
-		<div class="card-panel indigo darken-3 z-depth-2 profile-header">
+		<div class="card-panel light-green z-depth-2 profile-header">
 			<h5>Recent Games</h5>
-
-				{{#each games}}
-					{{> game}}
-				{{/each}}
 		</div>
 
 		<div class="card-panel amber z-depth-2 profile-header">
-			<h5>Team Roster</h5>
+			<h5>Recent Teams</h5>
 		</div>
 	</div>	
+
 </template>

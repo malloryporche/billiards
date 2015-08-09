@@ -1,4 +1,4 @@
-Template.teamDetailPage.events({
+(function(){Template.teamProfile.events({
 	'click input.favorites': function() {
 		    // code goes here
         // debugger
@@ -18,3 +18,5 @@ Template.teamDetailPage.events({
     	} 
     },
 	});
+
+})();

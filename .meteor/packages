@@ -14,3 +14,5 @@ iron:router
 fourseven:scss
 juliancwirko:s-alert
 juliancwirko:s-alert-jelly
+cfs:standard-packages
+cfs:gridfs
